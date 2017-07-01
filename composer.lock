@@ -1,0 +1,38 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "d184491495829ba905f07b00404b9b89",
+    "content-hash": "3a2c13a2bbeb3f9810fa446f084af15f",
+    "packages": [
+        {
+            "name": "zhanghao/practice",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CNKasD/composertest.git",
+                "reference": "33dac3e90cc5c6c3cd102a7bbfd270f2be7592c3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zhanghao\\Practice\\": "src/"
+                }
+            },
+            "description": "实习题库，练习composer的使用",
+            "time": "2017-07-01 02:28:13"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "zhanghao/practice": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="echarts.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<title>服务器状态监控</title>
+</head>
+<body>
+
+
+
+	<div class="container">
+		<div class="row clearfix">	
+			<!-- 模态框 -->
+			<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel">
+								共<span id="processnum"></span>个相关进程
+							</h4>
+						</div>
+						<div class="modal-body">
+							<table class="table table-striped" id="tb">
+  								
+							</table>
+						</div>
+						<div class="modal-footer">
+							 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> 
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			<div class="col-md-12 column">
+				<ul class="nav nav-pills">
+					<li class="active">
+						 <a href="#"> <span class="badge pull-right" id="user">x</span> 服务器当前连接人数</a>
+					</li>
+					<li>
+						 <a href="#"> <span class="badge pull-right" id="process">x</span> 进程数</a>
+					</li>
+					<li>
+						 <a href="#"> <span class="badge pull-right" id="mysql">x</span> MYSQL连接数</a>
+					</li>
+					<li>
+						<form class="form-inline">
+					  	<div class="form-group">
+					    	<label for="exampleInputName2"></label>
+					    	<input type="text" class="form-control" id="processname" placeholder="输入进程名称查询">
+					  	</div>
+					  	<button type="button" class="btn btn-success" onclick="getProcessInfo()">查询</button>
+					</li>
+				</ul>
+				<div class="row clearfix">
+					<div id="cpu"  style="width: 600px;height:400px;">
+					</div>
+					<div id="mem"  style="width: 600px;height:400px;">
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div id="df" style="width: 1000px;height:400px;">
+					</div>
+					<div style="width: 600px;height:400px;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script type="text/javascript">
+    	window.cpus  = [];
+    	window.loadaverag = []; 
+    	window.time  = []; 
+
+    	//定时器，用于每三秒请求一次数据
+    	$(document).ready(function(){
+		  setInterval(getData,3000);
+		});
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('cpu'));
+        // 显示标题，图例和空的坐标轴
+		myChart.setOption({
+		    title: {
+		        text: 'CPU使用率'
+		    },
+		     tooltip: {
+		        trigger: 'axis',
+		        axisPointer: {
+		            type: 'cross'
+		        }
+		    },
+		    legend: {
+		        data:['CPU使用率','系统平均负载']
+		    },
+		    xAxis: {
+		    	type: 'category',
+	            boundaryGap: true,				
+		        data: []
+		    },
+		    yAxis: [
+		    	 {
+		            type: 'value',
+		            scale: true,
+		            name: 'CPU使用率',
+		            max: 100,
+		            min: 0,
+		            boundaryGap: [0.2, 0.2]
+		        },
+		        {
+		            type: 'value',
+		            scale: true,
+		            name: '系统平均负载',
+		            max: 2,
+		            min: 0,
+		            boundaryGap: [0.2, 0.2]
+		        }
+		    ],
+		    series: [
+			    {
+			        name: 'CPU使用率',
+			        type: 'bar',
+			        data: []
+			    },
+			    {
+			    	name: 		'系统平均负载',
+			    	type: 		'line',
+			    	yAxisIndex: 1,
+			    	data: 		[]
+			    }
+		    ]
+		});
+		
+		//loading
+		myChart.showLoading();
+
+        var myChart2 = echarts.init(document.getElementById('mem'));
+        myChart2.setOption({
+        	title: {
+		        text: '内存信息/KB'
+		    },
+        	tooltip: {
+		        trigger: 'item'
+		    },
+        	series:[
+        	{
+        		name: '内存信息',
+        		type:'pie',
+        		radius:'55%',
+        		data:[]
+        	}]
+        });
+
+		//loading
+		myChart2.showLoading();
+
+
+
+		var myChart3 = echarts.init(document.getElementById('df'));
+		myChart3.setOption({
+        	title: {
+		        text: '硬盘信息/GB'
+		    },
+		    tooltip : {
+		        trigger: 'axis',
+		        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+		            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+		        }
+		    },
+		    legend: {
+		        data: ['1k-blocks', '已用','可用','使用率']
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis:  {
+		        type: 'value'
+		    },
+		    yAxis: {
+		        type: 'category',
+		        data: []
+		    },
+		    series: [
+		        {
+		            name: '1k-blocks',
+		            type: 'bar',
+		            stack: '总量',
+		            data: []
+		        },
+		        {
+		            name: '已用',
+		            type: 'bar',
+		            stack: '总量',
+		            data: []
+		        },
+		        {
+		            name: '可用',
+		            type: 'bar',
+		            stack: '总量',
+		            data: []
+		        },
+		        {
+		            name: '使用率',
+		            type: 'bar',
+		            stack: '总量',
+		            data: []
+		        }
+		    ]
+		});
+		//loading
+		myChart3.showLoading();
+
+		// 异步加载数据
+		function getData(){
+			$.ajax({
+				type:'POST',
+				url:'GetInfo.php',
+				dataType:'json',
+				success:function(data)
+				{
+
+					//修改在线人数
+					$('#user').html(data.top.top['users']);
+					$('#process').html(data.top.Tasks.total);
+					$('#mysql').html(data.mysql);
+					//第一张图表
+					console.log(data);
+					if (cpus.length>10) {
+						window.cpus.shift();
+					}
+					if (loadaverag.length>10) {
+						window.loadaverag.shift();
+					}
+					if (time.length>10) {
+						window.time.shift();
+					}
+					window.cpus.push(100-data.top.Cpus['id']);
+					window.loadaverag.push(data.top.top.loadaverag);
+					window.time.push(data.time);
+
+			  		// 填入数据
+			  		myChart.hideLoading();			
+				    myChart.setOption({
+				        xAxis: {
+				            data: time,
+				        },
+				        series: [
+					        {
+					            // 根据名字对应到相应的系列
+					            name: 'CPU使用率',
+					            data: cpus
+					        },
+					        {
+					        	name: '系统平均负载',
+					        	data: loadaverag					        
+					        }
+				        ]
+				    });
+
+
+				    //第二张图表
+				    myChart2.hideLoading();	
+				    window.used    = data.top.Mem.used ; 
+				    window.free    = data.top.Mem.free ; 
+				    window.buffers = data.top.Mem.buffers ; 
+
+				    window.used = used.replace(/k/,'');
+				    window.free = free.replace(/k/,'');
+				    window.buffers = buffers.replace(/k/,'');
+	
+
+				     myChart2.setOption({
+				    	series:[
+				    	{
+				    		name: '内存信息',
+      
+				    		type:'pie',
+				    		radius:'55%',
+				    		data:
+				    		[
+				    			{value:used,name:'已用内存'},
+	        					{value:free,name:'空闲内存'},
+	        					{value:buffers,name:'缓存的内存量'}
+				    		],
+				            itemStyle:{
+								normal:{
+					    			label:{
+					    				show:true,
+					    				formatter:'{b} :{c} ({d}%)'
+					    			},
+					    			labelLine:{
+					    				show:true
+					    			}
+				    			},
+				            } ,
+				    	}]
+				    });
+
+				    //第三个页面
+				    window.dfName 	= [];
+				    window.df1k 	= [];
+				    window.dfUsed 	= [];
+				    window.dfAva 	= [];
+				    window.dfUse 	= [];
+				    for (var i = 0 ; i <data.df.length; i++) {
+				    	dfName[i] = data.df[i][0] + "挂载于" + data.df[i][5];
+				    	df1k[i]   = data.df[i][1];
+				    	dfUsed[i] = data.df[i][2];
+				    	dfAva[i]  = data.df[i][3];
+				    	dfUse[i]  = data.df[i][4].replace(/%/,'');
+
+				    }
+				    myChart3	.hideLoading();	
+		    		myChart3.setOption({
+		    			yAxis: {
+					        type: 'category',
+					        data: dfName
+					    },
+					    series: [
+				        {
+				            name: '1k-blocks',
+				            type: 'bar',
+				            stack: '总量',
+				            label: {
+				                normal: {
+				                    show: false,
+				                    position: 'insideRight'
+				                }
+				            },
+				            data: df1k
+				        },
+				        {
+				            name: '已用',
+				            type: 'bar',
+				            stack: '总量',
+				            label: {
+				                normal: {
+				                    show: false,
+				                    position: 'insideRight'
+				                }
+				            },
+				            data: dfUsed
+				        },
+				        {
+				            name: '可用',
+				            type: 'bar',
+				            stack: '总量',
+				            label: {
+				                normal: {
+				                    show: false,
+				                    position: 'insideRight'
+				                }
+				            },
+				            data: dfAva
+				        },
+				        {
+				            name: '使用率',
+				            type: 'bar',
+				            stack: '总量',
+				            label: {
+				                normal: {
+				                    show: false,
+				                    position: 'insideRight'
+				                }
+				            },
+				            data: dfUse
+				        }
+				    ]
+
+
+		    		});
+        			
+				},
+				error:function(XMLHttpRequest, textStatus, errorThrown)
+				{
+ 				//	alert(XMLHttpRequest.status);
+                //    alert(XMLHttpRequest.readyState);
+                //    alert(textStatus);
+				}
+
+			});
+		}
+
+
+		function getProcessInfo(){
+
+			var name = $('#processname').val();			
+			$.ajax({
+				type:'POST',
+				url:'SearchProcess.php',
+				data:{
+					'name':name
+				},
+				dataType:'json',
+				success:function(data)
+				{
+					if (data.error==0) 
+					{
+						$('#processnum').html(data.data.number);
+						var detailData = data.data.detail;
+						$('#tb').empty();
+						$("#tb").append('<tr><th>UID</th><th>PID</th><th>正在执行的命令行命令</th></tr>');
+						for (var i = 0; i < detailData.length; i++) {
+							$("#tb").append('<tr><td>'+detailData[i][0]+'</td><td>'+detailData[i][1]+'</td><td>'+detailData[i][2]+'</td></tr>');
+
+						};
+
+
+						$('#myModal').modal('toggle');
+					}
+					
+				},
+				error:function(XMLHttpRequest, textStatus, errorThrown)
+				{
+ 					//alert(XMLHttpRequest.status);
+                   // alert(XMLHttpRequest.readyState);
+                   // alert(textStatus);
+				}
+			});
+		
+		}
+    </script>
+</body>
+</html>
