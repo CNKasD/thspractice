@@ -13,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CNKasD/composertest.git",
-                "reference": "33dac3e90cc5c6c3cd102a7bbfd270f2be7592c3"
+                "reference": "c07d5b84c74483a3c4fc5660ce94a60e8ff01466"
             },
             "type": "library",
             "autoload": {
@@ -22,7 +22,7 @@
                 }
             },
             "description": "实习题库，练习composer的使用",
-            "time": "2017-07-01 02:28:13"
+            "time": "2017-07-04 01:58:30"
         }
     ],
     "packages-dev": [],
