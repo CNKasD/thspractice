@@ -1,0 +1,97 @@
+[04-Jul-2017 10:52:08 Asia/Shanghai] PHP Parse error:  syntax error, unexpected ''数据插入成功'' (T_CONSTANT_ENCAPSED_STRING) in /var/www/html/test/zhanghao/userrights/index.php on line 13
+[04-Jul-2017 13:22:53 Asia/Shanghai] PHP Fatal error:  Declaration of Zhanghao\Practice\MongoCurd::del() must be compatible with Zhanghao\Practice\MyCurd::del($account) in /var/www/html/test/zhanghao/users/MongoCurd.php on line 6
+[04-Jul-2017 13:23:30 Asia/Shanghai] PHP Fatal error:  Class 'Zhanghao\Practice\Zhanghao\Practice\CurdFactory' not found in /var/www/html/test/zhanghao/users/testmongo.php on line 5
+[04-Jul-2017 13:24:10 Asia/Shanghai] PHP Catchable fatal error:  Object of class Zhanghao\Practice\MongoCurd could not be converted to string in /var/www/html/test/zhanghao/users/MongoCurd.php on line 17
+[04-Jul-2017 13:25:19 Asia/Shanghai] PHP Warning:  Missing argument 1 for Zhanghao\Practice\MongoCurd::getInfo(), called in /var/www/html/test/zhanghao/users/testmongo.php on line 15 and defined in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:25:19 Asia/Shanghai] PHP Notice:  Undefined variable: _oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 27
+[04-Jul-2017 13:25:19 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 27
+[04-Jul-2017 13:25:58 Asia/Shanghai] PHP Notice:  Undefined variable: _mongo in /var/www/html/test/zhanghao/users/MongoCurd.php on line 14
+[04-Jul-2017 13:25:58 Asia/Shanghai] PHP Notice:  Trying to get property of non-object in /var/www/html/test/zhanghao/users/MongoCurd.php on line 14
+[04-Jul-2017 13:25:58 Asia/Shanghai] PHP Notice:  Undefined variable: _db in /var/www/html/test/zhanghao/users/MongoCurd.php on line 15
+[04-Jul-2017 13:25:58 Asia/Shanghai] PHP Notice:  Trying to get property of non-object in /var/www/html/test/zhanghao/users/MongoCurd.php on line 15
+[04-Jul-2017 13:25:58 Asia/Shanghai] PHP Warning:  Missing argument 1 for Zhanghao\Practice\MongoCurd::getInfo(), called in /var/www/html/test/zhanghao/users/testmongo.php on line 15 and defined in /var/www/html/test/zhanghao/users/MongoCurd.php on line 23
+[04-Jul-2017 13:25:58 Asia/Shanghai] PHP Notice:  Undefined property: Zhanghao\Practice\MongoCurd::$_oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:25:58 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:26:36 Asia/Shanghai] PHP Warning:  Missing argument 1 for Zhanghao\Practice\MongoCurd::getInfo(), called in /var/www/html/test/zhanghao/users/testmongo.php on line 15 and defined in /var/www/html/test/zhanghao/users/MongoCurd.php on line 23
+[04-Jul-2017 13:26:36 Asia/Shanghai] PHP Notice:  Undefined property: Zhanghao\Practice\MongoCurd::$_oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:26:36 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:26:45 Asia/Shanghai] PHP Warning:  Missing argument 1 for Zhanghao\Practice\MongoCurd::getInfo(), called in /var/www/html/test/zhanghao/users/testmongo.php on line 15 and defined in /var/www/html/test/zhanghao/users/MongoCurd.php on line 23
+[04-Jul-2017 13:26:45 Asia/Shanghai] PHP Notice:  Undefined property: Zhanghao\Practice\MongoCurd::$_oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:26:45 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:27:01 Asia/Shanghai] PHP Notice:  Undefined property: Zhanghao\Practice\MongoCurd::$_oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:27:01 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 25
+[04-Jul-2017 13:30:06 Asia/Shanghai] PHP Notice:  Undefined property: Zhanghao\Practice\MongoCurd::$_oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 23
+[04-Jul-2017 13:30:06 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 23
+[04-Jul-2017 13:32:05 Asia/Shanghai] PHP Catchable fatal error:  Object of class Zhanghao\Practice\MongoCurd could not be converted to string in /var/www/html/test/zhanghao/users/MongoCurd.php on line 24
+[04-Jul-2017 13:32:35 Asia/Shanghai] PHP Notice:  Undefined property: Zhanghao\Practice\MongoCurd::$_oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 26
+[04-Jul-2017 13:32:35 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 26
+[04-Jul-2017 13:32:46 Asia/Shanghai] PHP Notice:  Undefined variable: oprea in /var/www/html/test/zhanghao/users/MongoCurd.php on line 26
+[04-Jul-2017 13:32:46 Asia/Shanghai] PHP Fatal error:  Call to a member function find() on null in /var/www/html/test/zhanghao/users/MongoCurd.php on line 26
+[04-Jul-2017 13:50:45 Asia/Shanghai] PHP Warning:  require(../mongo/CurdFactory.php): failed to open stream: No such file or directory in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:50:45 Asia/Shanghai] PHP Fatal error:  require(): Failed opening required '../mongo/CurdFactory.php' (include_path='.:/usr/local/php/lib/php') in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:51:40 Asia/Shanghai] PHP Warning:  require(../mongo/CurdFactory.php): failed to open stream: No such file or directory in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:51:40 Asia/Shanghai] PHP Fatal error:  require(): Failed opening required '../mongo/CurdFactory.php' (include_path='.:/usr/local/php/lib/php') in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:52:12 Asia/Shanghai] PHP Warning:  require(../mongo/CurdFactory.php): failed to open stream: No such file or directory in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:52:12 Asia/Shanghai] PHP Fatal error:  require(): Failed opening required '../mongo/CurdFactory.php' (include_path='.:/usr/local/php/lib/php') in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:54:02 Asia/Shanghai] PHP Warning:  require(../mongo/CurdFactory.php): failed to open stream: No such file or directory in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:54:02 Asia/Shanghai] PHP Fatal error:  require(): Failed opening required '../mongo/CurdFactory.php' (include_path='.:/usr/local/php/lib/php') in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:55:40 Asia/Shanghai] PHP Fatal error:  Cannot redeclare class Zhanghao\Practice\mongo\CurdFactory in /var/www/html/test/zhanghao/users/mongo/CurdFactory.php on line 6
+[04-Jul-2017 13:57:00 Asia/Shanghai] PHP Warning:  require(../mongo/CurdFactory.php): failed to open stream: No such file or directory in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:57:00 Asia/Shanghai] PHP Fatal error:  require(): Failed opening required '../mongo/CurdFactory.php' (include_path='.:/usr/local/php/lib/php') in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:57:02 Asia/Shanghai] PHP Warning:  require(../mongo/CurdFactory.php): failed to open stream: No such file or directory in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:57:02 Asia/Shanghai] PHP Fatal error:  require(): Failed opening required '../mongo/CurdFactory.php' (include_path='.:/usr/local/php/lib/php') in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:57:12 Asia/Shanghai] PHP Warning:  require(../../mongo/CurdFactory.php): failed to open stream: No such file or directory in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:57:12 Asia/Shanghai] PHP Fatal error:  require(): Failed opening required '../../mongo/CurdFactory.php' (include_path='.:/usr/local/php/lib/php') in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 4
+[04-Jul-2017 13:57:20 Asia/Shanghai] PHP Fatal error:  Cannot redeclare class Zhanghao\Practice\mongo\CurdFactory in /var/www/html/test/zhanghao/users/mongo/CurdFactory.php on line 6
+[04-Jul-2017 13:59:25 Asia/Shanghai] PHP Fatal error:  Cannot redeclare class Zhanghao\Practice\mongo\CurdFactory in /var/www/html/test/zhanghao/users/mongo/CurdFactory.php on line 6
+[04-Jul-2017 14:00:02 Asia/Shanghai] PHP Warning:  Missing argument 1 for Zhanghao\Practice\users\GeneralUser::login(), called in /var/www/html/test/zhanghao/users/index.php on line 8 and defined in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 14
+[04-Jul-2017 14:00:02 Asia/Shanghai] PHP Warning:  Missing argument 2 for Zhanghao\Practice\users\GeneralUser::login(), called in /var/www/html/test/zhanghao/users/index.php on line 8 and defined in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 14
+[04-Jul-2017 14:08:58 Asia/Shanghai] PHP Catchable fatal error:  Object of class MongoCursor could not be converted to string in /var/www/html/test/zhanghao/users/index.php on line 8
+[04-Jul-2017 14:12:04 Asia/Shanghai] PHP Fatal error:  Cannot use object of type MongoCursor as array in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 25
+[04-Jul-2017 14:14:50 Asia/Shanghai] PHP Notice:  Undefined index: id in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:14:50 Asia/Shanghai] PHP Notice:  Use of undefined constant id - assumed 'id' in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:15:15 Asia/Shanghai] PHP Notice:  Array to string conversion in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:15:15 Asia/Shanghai] PHP Notice:  Array to string conversion in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:15:27 Asia/Shanghai] PHP Notice:  Array to string conversion in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:15:27 Asia/Shanghai] PHP Notice:  Array to string conversion in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:15:48 Asia/Shanghai] PHP Notice:  Array to string conversion in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:15:48 Asia/Shanghai] PHP Notice:  Array to string conversion in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:19:58 Asia/Shanghai] PHP Notice:  Undefined property: MongoId::$id in /var/www/html/test/zhanghao/users/index.php on line 9
+[04-Jul-2017 14:31:31 Asia/Shanghai] PHP Fatal error:  Access level to Zhanghao\Practice\users\GeneralUser::$_level must be protected (as in class Zhanghao\Practice\users\Users) or weaker in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 8
+[04-Jul-2017 14:32:52 Asia/Shanghai] PHP Notice:  Undefined index: id in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 49
+[04-Jul-2017 14:32:52 Asia/Shanghai] PHP Notice:  Trying to get property of non-object in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 49
+[04-Jul-2017 14:32:52 Asia/Shanghai] PHP Notice:  Undefined index: level in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 50
+[04-Jul-2017 14:32:52 Asia/Shanghai] PHP Notice:  Undefined index: account in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 51
+[04-Jul-2017 14:32:52 Asia/Shanghai] PHP Notice:  Undefined index: username in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 52
+[04-Jul-2017 14:32:52 Asia/Shanghai] PHP Notice:  Undefined index: pwd in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 53
+[04-Jul-2017 14:33:27 Asia/Shanghai] PHP Notice:  Undefined index: id in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 50
+[04-Jul-2017 14:33:27 Asia/Shanghai] PHP Notice:  Trying to get property of non-object in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 50
+[04-Jul-2017 14:33:27 Asia/Shanghai] PHP Notice:  Undefined index: level in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 51
+[04-Jul-2017 14:33:27 Asia/Shanghai] PHP Notice:  Undefined index: account in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 52
+[04-Jul-2017 14:33:27 Asia/Shanghai] PHP Notice:  Undefined index: username in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 53
+[04-Jul-2017 14:33:27 Asia/Shanghai] PHP Notice:  Undefined index: pwd in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 54
+[04-Jul-2017 14:41:00 Asia/Shanghai] PHP Warning:  count() expects at least 1 parameter, 0 given in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 37
+[04-Jul-2017 14:41:00 Asia/Shanghai] PHP Catchable fatal error:  Object of class MongoCursor could not be converted to string in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 37
+[04-Jul-2017 15:12:54 Asia/Shanghai] PHP Fatal error:  Declaration of Zhanghao\Practice\users\GeneralUser::getLowUserInfo() must be compatible with Zhanghao\Practice\users\Users::getLowUserInfo() in /var/www/html/test/zhanghao/users/users/GeneralUser.php on line 8
+[04-Jul-2017 15:24:49 Asia/Shanghai] PHP Fatal error:  Class Zhanghao\Practice\mongo\MongoCurd contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Zhanghao\Practice\mongo\MyCurd::searchCount) in /var/www/html/test/zhanghao/users/mongo/MongoCurd.php on line 6
+[04-Jul-2017 15:33:36 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'MongoException' with message 'Cannot run command count(): $or needs an array' in /var/www/html/test/zhanghao/users/mongo/MongoCurd.php:50
+Stack trace:
+#0 /var/www/html/test/zhanghao/users/mongo/MongoCurd.php(50): MongoCursor->count()
+#1 /var/www/html/test/zhanghao/users/users/GeneralUser.php(20): Zhanghao\Practice\mongo\MongoCurd->searchCount(Array)
+#2 /var/www/html/test/zhanghao/users/index.php(12): Zhanghao\Practice\users\GeneralUser->createLowUser('admin', '123', 'root2', 2)
+#3 {main}
+  thrown in /var/www/html/test/zhanghao/users/mongo/MongoCurd.php on line 50
+[04-Jul-2017 15:35:52 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'MongoException' with message 'Cannot run command count(): unknown operator: $or' in /var/www/html/test/zhanghao/users/mongo/MongoCurd.php:50
+Stack trace:
+#0 /var/www/html/test/zhanghao/users/mongo/MongoCurd.php(50): MongoCursor->count()
+#1 /var/www/html/test/zhanghao/users/users/GeneralUser.php(21): Zhanghao\Practice\mongo\MongoCurd->searchCount(Array)
+#2 /var/www/html/test/zhanghao/users/index.php(12): Zhanghao\Practice\users\GeneralUser->createLowUser('admin', '123', 'root2', 2)
+#3 {main}
+  thrown in /var/www/html/test/zhanghao/users/mongo/MongoCurd.php on line 50
+[04-Jul-2017 15:38:28 Asia/Shanghai] PHP Fatal error:  Uncaught exception 'MongoException' with message 'Cannot run command count(): unknown operator: $or' in /var/www/html/test/zhanghao/users/mongo/MongoCurd.php:50
+Stack trace:
+#0 /var/www/html/test/zhanghao/users/mongo/MongoCurd.php(50): MongoCursor->count()
+#1 /var/www/html/test/zhanghao/users/users/GeneralUser.php(21): Zhanghao\Practice\mongo\MongoCurd->searchCount(Array)
+#2 /var/www/html/test/zhanghao/users/index.php(12): Zhanghao\Practice\users\GeneralUser->createLowUser('admin', '123', 'root2', 2)
+#3 {main}
+  thrown in /var/www/html/test/zhanghao/users/mongo/MongoCurd.php on line 50

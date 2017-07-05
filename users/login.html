@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<title>用户登录</title>
+</style>
+</head>
+<body>	
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-4 column">
+		</div>
+		<div class="col-md-4 column">
+			<form class="form-horizontal" role="form" method="post">
+				<div class="form-group">
+					 <label for="account" class="col-sm-2 control-label">账号</label>
+					<div class="col-sm-10">
+						<input class="form-control" id="account" type="text" />
+					</div>
+				</div>
+				<div class="form-group">
+					 <label for="pwd" class="col-sm-2 control-label">密码</label>
+					<div class="col-sm-10">
+						<input class="form-control" id="pwd" type="password" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						 <button type="button" class="btn btn-default" onclick="login()">登录</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-4 column">
+		</div>
+	</div>
+</div>
+
+<script>
+function login(){
+	$.ajax({
+		type:'POST',
+		url:'login.php',
+		data:{
+			'account':$('#account').val(),
+			'pwd':$('#pwd').val()
+		},
+		dataType:'json',
+		success:function(data)
+		{	
+			if (data.error==0) 
+			{	
+				console.log(data);
+				location.href = 'http://test.10jqka.com.cn/zhanghao/users/index.php';
+			} else{
+				alert(data.msg);
+			}
+			
+		},
+		error:function(XMLHttpRequest, textStatus, errorThrown)
+		{
+				// alert(XMLHttpRequest.status);
+//               alert(XMLHttpRequest.readyState);
+//               alert(textStatus);
+		}
+	});
+}
+</script>
+</body>
+</html>

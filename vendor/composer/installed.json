@@ -6,9 +6,9 @@
         "source": {
             "type": "git",
             "url": "https://github.com/CNKasD/composertest.git",
-            "reference": "c07d5b84c74483a3c4fc5660ce94a60e8ff01466"
+            "reference": "cc70b4b31e6133756a1323e24dae0886e7b4fb43"
         },
-        "time": "2017-07-04 01:58:30",
+        "time": "2017-07-05 01:17:40",
         "type": "library",
         "installation-source": "source",
         "autoload": {
