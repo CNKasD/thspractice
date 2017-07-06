@@ -6,4 +6,4 @@
     <input type="submit" value="提交">
 </form>
 
-<a class="big" href="<?php echo $url ?>">返回</a>
+<a class="big" href="/item/index">返回</a>

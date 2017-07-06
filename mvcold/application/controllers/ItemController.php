@@ -43,9 +43,9 @@ class ItemController extends Controller
             $item = (new ItemModel)->find($id);
             $postUrl = $this->url('item','update');
         }
-        $url = $this->url('item', 'index');
+
         $title = '条目管理';
-        $this->view('manage',compact('title',  'item', 'postUrl', 'url'));
+        $this->view('manage',compact('title',  'item', 'postUrl'));
     }
     
     // 更新记录，测试框架DB记录更新（Update）

@@ -16,8 +16,8 @@
             <td><?php echo $item['id'] ?></td>
             <td><?php echo $item['item_name'] ?></td>
             <td>
-                <a href="<?php echo $url['manage'] ?>/<?php echo $item['id'] ?>">编辑</a>
-                <a href="<?php echo $url['del'] ?>/<?php echo $item['id'] ?>">删除</a>
+                <a href="<?php echo $url['manage'] ?>&keywords=<?php echo $item['id'] ?>">编辑</a>
+                <a href="<?php echo $url['del'] ?>&id=<?php echo $item['id'] ?>">删除</a>
             </td>
         </tr>
     <?php endforeach ?>

@@ -1,0 +1,1 @@
+<a class="big" href="<?php echo $url ?>">成功添加，点击返回</a>

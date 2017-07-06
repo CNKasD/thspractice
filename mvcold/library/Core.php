@@ -24,8 +24,7 @@ class Core
 
     // 路由处理
     public function route()
-    {   
-        /* ?c=controller&a=action 形式的路由
+    {
         $controllerName = $this->_config['defaultController'];
         $actionName = $this->_config['defaultAction'];
         $param = array();
@@ -58,49 +57,6 @@ class Core
                 $param["$tmp[0]"] = $tmp[1];
             }
         }
-        */
-
-
-        $controllerName = $this->_config['defaultController'];
-        $actionName = $this->_config['defaultAction'];
-        $param = array();
-
-        $url = $_SERVER['REQUEST_URI'];
-        // 清除?之后的内容
-        $position = strpos($url, '?');
-        $url = $position === false ? $url : substr($url, 0, $position);
-        // 删除前后的“/”
-        $url = trim($url, '/');
-        if ($url) {
-            // 使用“/”分割字符串，并保存在数组中
-            $urlArray = explode('/', $url);
-            // 删除空的数组元素
-            $urlArray = array_filter($urlArray);
-            
-            // 获取控制器名
-            $controllerName = ucfirst($urlArray[0]);
-            
-            // 获取动作名
-            array_shift($urlArray);
-            $actionName = $urlArray ? $urlArray[0] : $actionName;
-            
-            // 获取URL参数
-            array_shift($urlArray);
-            $param = $urlArray ? $urlArray : array();
-        }
-
-        // 判断控制器和操作是否存在
-        $controller = $controllerName . 'Controller';
-        if (!class_exists($controller)) {
-            exit($controller . '控制器不存在');
-        }
-        if (!method_exists($controller, $actionName)) {
-            exit($actionName . '方法不存在');
-        }
-
-    
-
-
         //实例化控制器
         $dispatch = new $controller($controllerName, $actionName);
 

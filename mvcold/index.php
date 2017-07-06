@@ -1,5 +1,7 @@
 <?php 
 // 应用目录为当前目录
+echo 'aaaaaa';
+return ;
 define('APP_PATH', __DIR__ . '/');
 
 

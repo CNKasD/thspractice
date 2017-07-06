@@ -26,7 +26,7 @@ class Controller
     //生成相对路径URL
     public function url($controller, $action)
     {
-        return '/' . $controller . '/' . $action;
+        return '?c=' . $controller . '&a=' . $action;
     }
 
 }
